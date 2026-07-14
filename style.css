@@ -1,0 +1,154 @@
+:root {
+    --bg-color: #0d0d0d;
+    --terminal-bg: #1a1a1a;
+    --text-color: #00ff00;
+    --prompt-color: #00ff00;
+    --error-color: #ff3333;
+    --highlight-color: #00cccc;
+    --font-family: 'Fira Code', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.terminal-container {
+    width: 80%;
+    max-width: 900px;
+    height: 70vh;
+    background-color: var(--terminal-bg);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #444;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.close { background-color: #ff5f56; }
+.minimize { background-color: #ffbd2e; }
+.maximize { background-color: #27c93f; }
+
+.title {
+    flex-grow: 1;
+    text-align: center;
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-right: 44px; /* to center text perfectly */
+}
+
+.terminal-body {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: var(--terminal-bg);
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+.output {
+    margin-bottom: 10px;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    color: var(--prompt-color);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#command-input {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    flex-grow: 1;
+    outline: none;
+    caret-color: var(--text-color);
+}
+
+.cmd-block {
+    margin-bottom: 15px;
+}
+
+.cmd-text {
+    color: #fff;
+}
+
+.cmd-response {
+    margin-top: 5px;
+    white-space: pre-wrap;
+}
+
+.error {
+    color: var(--error-color);
+}
+
+.highlight {
+    color: var(--highlight-color);
+    font-weight: bold;
+}
+
+a {
+    color: var(--highlight-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.ascii-art {
+    color: var(--highlight-color);
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
